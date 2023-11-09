@@ -31,6 +31,10 @@ export default async function handler(
       .map((model) => OpenAIChatModels[model as keyof typeof OpenAIChatModels])
       .sort((a, b) => (b.maxLimit || 0) - (a.maxLimit || 0)); // Sort by max limit
 
+    if (!chatModels.some(model => model.id === 'gpt-4-1106-preview')) {
+      chatModels.push(OpenAIChatModels['gpt-4-1106-preview']);
+    }
+
     return res.status(200).json({
       models,
       chatModels,

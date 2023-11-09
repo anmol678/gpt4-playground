@@ -6,9 +6,9 @@ import {
 } from "eventsource-parser";
 
 export const defaultConfig = {
-  model: "gpt-4-turbo",
+  model: "gpt-4-1106-preview",
   temperature: 0.5,
-  max_tokens: 8192,
+  max_tokens: 4096,
   top_p: 1,
   frequency_penalty: 0,
   presence_penalty: 0.0,
